@@ -10,3 +10,8 @@ fn test() {
 
     println!("x: {}, y: {}, z: {}", x, y, x + y);
 }
+
+#[test]
+fn hello_test(){
+    println!("Hello, world!");
+}
