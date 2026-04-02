@@ -15,3 +15,13 @@ fn test() {
 fn hello_test(){
     println!("Hello, world!");
 }
+
+#[test]
+fn hello_world(){
+    println!("Hello, world!");
+    println!("Hello, world!");
+    println!("=============");
+
+    print!("HELLO");
+    print!("HELLO");
+}
