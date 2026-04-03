@@ -1,5 +1,3 @@
-use std::arch::aarch64::int32x2_t;
-
 fn main() {
     println!("Hello, world!");
 }
@@ -67,11 +65,37 @@ fn data_type(){
 }
 
 #[test]
-fn number(){
+fn number() {
     let age: i32 = 18;
     println!("age: {}", age);
 
-
     let b: f64 = 10.2;
     println!("b: {}", b);
+}
+
+#[test]
+fn number_conversion() {
+    let a: i8 = 10;
+    println!("{}", a);
+
+    let b: i16 = a as i16;
+    println!("{}", b);
+
+    let c: i32 = b as i32;
+    println!("{}", c);
+
+    let d: i64 = 1000000000;
+    let e: i8 = d as i8;
+    println!("{}", e);
+
+
+    println!("----------------");
+
+    let az: i8 = 20;
+    println!("{}",az);
+
+    let bz: i16 = az as i16;
+    println!("{}", bz);
+
+
 }
