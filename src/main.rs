@@ -232,3 +232,68 @@ fn constant() {
     const MINIMUM: i32 = 0;
     println!("{} {}", MINIMUM, MAXIMUM);
 }
+
+
+#[test]
+fn variable_scope(){
+    println!("{}", MAXIMUM);
+
+    let b = 1;
+
+    {
+        println!("{}", b);
+        let s = 2;
+        println!("{}", s);
+    }
+
+    /* Tidak bisa diakses (error) */
+    // println!("{}", s);
+}
+
+#[test]
+fn stack_heap() {
+    function_a();
+    function_b();
+}
+
+fn function_a() {
+    let a = 10;
+    let b = String::from("Kurniawan");
+    println!("{}, {}", a, b);
+}
+
+fn function_b() {
+    let a = 10;
+    let b = String::from("Eko");
+    println!("{}, {}", a, b);
+}
+
+#[test]
+fn string() {
+
+    let name: &str = "   Bambang Soeharto   ";
+    let trim: &str = name.trim();
+
+    println!("{}", name);
+    println!("{}", trim);
+
+}
+
+#[test]
+fn string_type() {
+
+    let mut name: String = String::from("Bambang Soeharto");
+    println!("{}", name);
+
+    name.push_str(" Prabowo");
+    println!("{}", name);
+
+    let Purnomo = name.replace(" Prabowo", " Purnomo");
+    println!("{}", name);
+    println!("{}", Purnomo);
+
+}
+
+
+
+
