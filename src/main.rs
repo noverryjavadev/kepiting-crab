@@ -294,6 +294,118 @@ fn string_type() {
 
 }
 
+#[test]
+fn ownership_rules() {
+    let a = 10;
+
+    {
+        let b = 10;
+        println!("{}", b);
+    }
+
+    println!("{}", a);
+}
+
+#[test]
+fn data_copy() {
+    let a = 10;
+    let b = a;
+
+    println!("{} {}", a, b);
+}
+
+#[test]
+fn ownership_movement() {
+    let name1: String = String::from("Eko");
+    println!("{}", name1);
+
+    let name2: String = name1; // ownerhsip pindah ke name2
+    println!("{}", name2);
+    // println!("{}", name1);
+}
+
+#[test]
+fn clone() {
+    let name1 = String::from("Eko");
+    let name2 = name1.clone();
+
+    println!("{} {}", name1, name2);
+}
+
+#[test]
+fn if_expression() {
+    let value = 7;
+    let result: &str = if value >= 8 {
+        "Good"
+    } else if value >= 6 {
+        "Not Bad"
+    } else if value >= 3 {
+        "Bad"
+    } else {
+        "Very Bad"
+    };
+
+    println!("{}", result);
+}
+
+#[test]
+fn loop_expression() {
+    let mut counter = 0;
+    loop {
+        counter += 1;
+
+        if counter > 10 {
+            break;
+        } else if counter % 2 == 0 {
+            continue;
+        }
+
+        println!("Counter : {}", counter);
+    }
+}
+
+#[test]
+fn fish_buzz(){
+    let mut fish = 0;
+
+    loop {
+        fish += 1;
+
+        if fish > 20 {
+            break;
+        } else if fish % 3 == 0 && fish % 5 == 0  {
+            println!("FizzBuzz");
+        } else if fish % 3 == 0 {
+            println!("Fizz");
+        } else if fish % 5 == 0 {
+            println!("Buzz");
+        } else {
+            println!("{}", fish);
+        }
+    }
+}
+
+#[test]
+fn loop_label() {
+    let mut number = 1;
+    'outer: loop {
+        let mut i = 1;
+        loop {
+            if number > 10 {
+                break 'outer;
+            }
+
+            println!("{} x {} = {}", number, i, number * i);
+            i += 1;
+            if i > 10 {
+                break;
+            }
+        }
+        number += 1;
+    }
+}
+
+
 
 
 
