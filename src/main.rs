@@ -437,7 +437,28 @@ fn array_iteration_for_loop() {
     }
 }
 
+#[test]
+fn range() {
+    let range = 0..5;
+    println!("Start : {}", range.start);
+    println!("End : {}", range.end);
 
+    let array: [&str; 5] = ["A", "B", "C", "D", "E"];
 
+    for i in range {
+        println!("{}", array[i]);
+    }
+}
 
+#[test]
+fn range_inclusive() {
+    let range = 0..=4;
+    println!("Start : {}", range.start());
+    println!("End : {}", range.end());
 
+    let array: [&str; 5] = ["A", "B", "C", "D", "E"];
+
+    for i in range {
+        println!("{}", array[i]);
+    }
+}
