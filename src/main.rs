@@ -462,3 +462,26 @@ fn range_inclusive() {
         println!("{}", array[i]);
     }
 }
+
+fn say_hello() {
+    println!("Hello");
+}
+
+#[test]
+fn test_say_hello() {
+    say_hello();
+    say_hello();
+    say_hello();
+    say_hello();
+}
+
+fn say_goodbye(first_name: &str, last_name: &str) {
+    println!("Goodbye {} {}", first_name, last_name);
+}
+
+#[test]
+fn test_say_goodbye() {
+    say_goodbye("Eko", "Khannedy");
+    say_goodbye("Budi", "Nugraha");
+    say_goodbye("Joko", "Susilo");
+}
