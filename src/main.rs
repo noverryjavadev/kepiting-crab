@@ -593,3 +593,29 @@ fn get_full_name(first_name: &String, last_name: &String) -> String {
     let name = format!("{} {}", first_name, last_name);
     return name;
 }
+
+#[test]
+fn test_get_full_name() {
+    let first_name = String::from("Eko");
+    let last_name = String::from("Kurniawan");
+
+    let full_name = get_full_name(&first_name, &last_name);
+
+    println!("{}", full_name);
+    println!("{}", first_name);
+    println!("{}", last_name);
+}
+
+#[test]
+fn slice_reference() {
+    let array: [i32; 10] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    let slice1: &[i32] = &array[..];
+    println!("{:?}", slice1);
+
+    let slice2: &[i32] = &array[0..5];
+    println!("{:?}", slice2);
+
+    let slice3: &[i32] = &array[5..];
+    println!("{:?}", slice3);
+}
